@@ -1,0 +1,1 @@
+authEtAl(sep="&",clean=false).replace(find="&etal",replace=EtAl)+year+len('>',5)+ShortTitle.skipwords.capitalize.prefix(_).len('>', 1).select(1,2).clean | authEtAl(sep="&",clean=false).replace(find="&etal",replace=EtAl)+year+len('>',5)+shorttitle(2,2).prefix(_).default(untitled)
