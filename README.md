@@ -1,9 +1,11 @@
 # Citation key formula explanation 
 First try to use the Short Title field (`ShortTitle`).
-- `auth(clean=true).lower.replace(find="-",replace="") `  
-	Get the first author's surname and remove any hyphens.  
-- `auth(1,2).replace(/.+/g,'.etal')`  
-	If there is a second author, replace their name with '.etal;  
+
+- `authEtal2(clean=true).lower.replace(find="-",replace="").replace(find=/\..*/,replace='.etal')`  
+	- `authEtal2`   
+	The last name of the first author, and the last name of the second author if there are two authors or ".etal" if there are more than two
+	- `.lower.replace(find="-",replace="").replace(find=/\..*/,replace='.etal')`  
+	Lowercase. Remove any hyphens. Remove the second author. (Technically, remove everything after the first "." and replace it with ".etal".)   
 - `year+len('>',5) `  
 	4-digit year
 - `ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix(_)`  
