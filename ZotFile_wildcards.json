@@ -1,0 +1,28 @@
+{"B":"bookTitle","P":{"default":"bookTitle","bookSection":"pages"},"W":{"field":"title","operations":{"function":"replace","regex":":","replacement":"-","flags":"g"}},"V":{"default":"issue","bookSection":{"field":"date","regex":"\\d{4}","replacement":"$1"}}}
+
+{
+    "B": "bookTitle",
+    "P": {
+        "default": "bookTitle",
+        "bookSection": "pages"
+    },
+    "C": "container-author",
+    "W": { 
+        "field": "title", 
+        "operations": { 
+            "function": "replace", 
+            "regex": ":", 
+            "replacement": "-", 
+            "flags": "g" 
+        }
+    },
+    "V": {
+        "default": "issue",
+        "bookSection": {
+            "field": "date",
+            "regex":  "\\d{4}",
+            "replacement": "$1",
+            "group": 1
+        }
+    }
+}
