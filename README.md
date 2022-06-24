@@ -1,14 +1,14 @@
-# My Bibliography Scripts 
-## Better BibTeX for Zotero citation key formula 
+# My Bibliography Scripts  
+## Better BibTeX for Zotero citation key formula  
 
-## Example
+### Example  
 
 | key | citation |
 |---|---|
 | `schaps2004_TICM.3_Mone` | Schaps, David M. “Money before Coinage: The Ancient Near East.” In  *The Invention of Coinage and the Monetization of Ancient Greece*, 34–56. University of Michigan Press, 2004. |
 
 
-## Explanation 
+### Explanation  
 
 First try to use the Short Title field (`ShortTitle`).
 
@@ -29,7 +29,19 @@ First try to use the Short Title field (`ShortTitle`).
 
 If the Short Title field is empty, try doing the same thing using the Title field (`shorttitle `).
 
-## ZotFile
+## ZotFile  
+
+### Renaming formula  
+
+`last name of Authors or Editors` - `Chapter` `Title` (`citekey`) 
+
+```
+{%a -}{ %C}{ %h| %W} (%b)
+```
+
+
+### Wildcards
+
 - `%B` should be used for creating parent **folders** containing texts in an anthology or essay collection. It outputs text like *bookTitle (year)*.
     - if there's an editor, it should include the editor. If there's no editor, assume it's a monograph and format like *Author year - bookTitle*. 
         -  for monographs, use :`{%a %y - %B}` 

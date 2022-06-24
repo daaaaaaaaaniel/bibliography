@@ -1,11 +1,5 @@
 authEtal2(clean=true).lower.replace(find="-",replace="").replace(find=/\..*/,replace='.etal')
 +year
-+BookTitle.clean.replace(find=/[a-z0-9\s]+/g,replace="").condense('').substring(1,4).prefix('_')
-+extra(session).clean.len('>',0).prefix('.')
-+title.clean.replace(find="-",replace="").condense('').substring(1,4).prefix('_') | 
-
-authEtal2(clean=true).lower.replace(find="-",replace="").replace(find=/\..*/,replace='.etal')
-+year
 +ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix(_) | 
 
 authors(1,etal='.etal',sep='.'clean=true).lower.replace(find="-",replace="")
