@@ -1,7 +1,9 @@
 authEtal2(clean=true).lower.replace(find="-",replace="").replace(find=/\..*/,replace='.etal')
 +year
-+ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix(_) | 
++ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix(_)
++postfix('-%(a)s') | 
 
 authors(1,etal='.etal',sep='.'clean=true).lower.replace(find="-",replace="")
 +year
 +shorttitle(2,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix('_').default(untitled)
++postfix('-%(a)s')

@@ -33,11 +33,13 @@ If the Short Title field is empty, try doing the same thing using the Title fiel
 
 ### Renaming formula  
 
-`last name of Authors or Editors` - `Chapter` `Title` (`citekey`) 
-
 ```
 {%a -}{ %C}{ %h| %W} (%b)
 ```
+`last name of Authors or Editors` - `Chapter` `Title` (`citekey`) 
+
+**Subfolder path**  
+`/ZotFile/%T{/%j (%y)}/`
 
 
 ### Wildcards
