@@ -1,4 +1,5 @@
-# Citation key formula 
+# My Bibliography Scripts 
+## Better BibTeX for Zotero citation key formula 
 
 ## Example
 
@@ -28,3 +29,13 @@ First try to use the Short Title field (`ShortTitle`).
 
 If the Short Title field is empty, try doing the same thing using the Title field (`shorttitle `).
 
+## ZotFile
+- `%B` should be used for creating parent **folders** containing texts in an anthology or essay collection. It outputs text like *bookTitle (year)*.
+    - if there's an editor, it should include the editor. If there's no editor, assume it's a monograph and format like *Author year - bookTitle*. 
+        -  for monographs, use :`{%a %y - %B}` 
+        - for anthologies/collections, use : `{%d (eds.) %y - %B}`
+        - `/ZotFile{/%d (eds.) %y - %B}` or just `/ZotFile{/%B (%y)}`
+- `%b` is broken… it should function more like `%c` but with RegEx `[^/]+(?=/$|$)` to select the last segment of the path.
+- `%P` should be used for indicating the page numbers of book sections. Use it as an {option} wild-card in **filenames**. It makes alphabetical sorting more useful.
+- `%W` is for formatting the title field to mimic the short title (?). Use it as a fallback for items without a short title.
+- `%C` is for `chapter-number` in the "extras" field.
