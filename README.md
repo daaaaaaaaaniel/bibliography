@@ -1,11 +1,12 @@
 # My Bibliography Scripts  
+
 ## Better BibTeX for Zotero citation key formula  
 
 ### Example  
 
 | key | citation |
 |---|---|
-| `schaps2004_TICM.3_Mone` | Schaps, David M. “Money before Coinage: The Ancient Near East.” In  *The Invention of Coinage and the Monetization of Ancient Greece*, 34–56. University of Michigan Press, 2004. |
+| `lee.etal2004_Deri-a` | Benjamin Lee and Edward LiPuma, “Deriving the Derivative,” in *Financial Derivatives and the Globalization of Risk* (Durham: Duke University Press, 2004), 107–40.  |
 
 
 ### Explanation  
@@ -29,27 +30,50 @@ First try to use the Short Title field (`ShortTitle`).
 
 If the Short Title field is empty, try doing the same thing using the Title field (`shorttitle `).
 
+
 ## ZotFile  
 
 ### Renaming formula  
 
+**File Name**  
+
+
+
+
 ```
 {%a -}{ %C}{ %h| %W} (%b)
 ```
-`last name of Authors or Editors` - `Chapter` `Title` (`citekey`) 
 
-**Subfolder path**  
+- `%a` – Author  
+- `%C`\* – Chapter (in "Extras")  
+- `%h` – Short title  
+- `%W`\* – Title without semicolon  
+- `%b` – Cite key  
+
+[//]: # (`%W` may be redundant of `%t` = `titleFormated`)  
+
+**Subfolder Path**  
 `/ZotFile/%T{/%j (%y)}/`
 
+- `%T` – Item type  
+- `%j` – Publication title  
+- `%y` – Year
 
-### Wildcards
+\* Custom  
+
+*Example*  
+
+> Lee & LiPuma - 1 Global Flows and the Politics of Circulation [lee.etal2004_Glob].pdf
+
+### Custom Wildcards
 
 - `%B` should be used for creating parent **folders** containing texts in an anthology or essay collection. It outputs text like *bookTitle (year)*.
     - if there's an editor, it should include the editor. If there's no editor, assume it's a monograph and format like *Author year - bookTitle*. 
         -  for monographs, use :`{%a %y - %B}` 
         - for anthologies/collections, use : `{%d (eds.) %y - %B}`
         - `/ZotFile{/%d (eds.) %y - %B}` or just `/ZotFile{/%B (%y)}`
-- `%b` is broken… it should function more like `%c` but with RegEx `[^/]+(?=/$|$)` to select the last segment of the path.
 - `%P` should be used for indicating the page numbers of book sections. Use it as an {option} wild-card in **filenames**. It makes alphabetical sorting more useful.
 - `%W` is for formatting the title field to mimic the short title (?). Use it as a fallback for items without a short title.
-- `%C` is for `chapter-number` in the "extras" field.
+- `%C` is for `chapter-number` in the "Extras" field.
+
+See [User defined wildcards](http://zotfile.com/#user-defined-wildcards) in the ZotFile documentation for more details.
