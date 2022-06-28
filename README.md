@@ -53,11 +53,12 @@ If the Short Title field is empty, try doing the same thing using the Title fiel
 [//]: # (`%W` may be redundant of `%t` = `titleFormated`)  
 
 **Subfolder Path**  
-`/ZotFile/%T{/%j (%y)}/`
+`/ZotFile/%T{/%J}{/vol. %v}{/no. %e}/`
 
 - `%T` – Item type  
-- `%j` – Publication title  
-- `%y` – Year
+- `%J`\* – Publication title  
+- `%v` – Volume
+- `%e` – Issue
 
 \* Custom  
 
@@ -75,5 +76,6 @@ If the Short Title field is empty, try doing the same thing using the Title fiel
 - `%P` should be used for indicating the page numbers of book sections. Use it as an {option} wild-card in **filenames**. It makes alphabetical sorting more useful.
 - `%W` is for formatting the title field to mimic the short title (?). Use it as a fallback for items without a short title.
 - `%C` is for `chapter-number` in the "Extras" field.
+- `%J` behaves similarly to stock %j, but it replaces colons with dashes.
 
 See [User defined wildcards](http://zotfile.com/#user-defined-wildcards) in the ZotFile documentation for more details.
