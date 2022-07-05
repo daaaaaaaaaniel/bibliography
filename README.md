@@ -30,6 +30,24 @@ First try to use the Short Title field (`ShortTitle`).
 
 If the Short Title field is empty, try doing the same thing using the Title field (`shorttitle `).
 
+The generator tries up to 8 different formulas to produce a cite key. 
+
+1. `.match('.etal').len('<=',17)` + Short title  
+	Use the first formula if there are more than one author, and the first author's last name is shorter than 12 characters.  
+
+	[//]: # ( the lengths of .etal is five ... 17-5=12)
+
+2. `.match('.etal').replace(find=/\..*/,replace='').substring(1,12).postfix('.etal')` + Short title  
+	If there are more than one author and the their last name is longer than 12 characters, truncate after the first 12 and append ".etal"
+
+3. `.len('>',12).substring(1,12)` + Short title  
+	If there is only one author and their last name is longer than than 12 characters, truncte it.
+
+4. Entire last name of authors + Short title  
+	If there is only one author and their last name is not longer than 12 characters, use the entire name.
+
+The final four attempts are the same as these first four, but they use the regular title instead of the short title.
+
 
 ## ZotFile  
 
