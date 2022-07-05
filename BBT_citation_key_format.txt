@@ -1,14 +1,14 @@
-authEtal2.clean.lower.replace(find="-",replace="").replace(find=/\..*/,replace='.etal').match('.etal').len('<=',17)
+authEtal2.clean.lower.replace(find="-",replace="").replace(find=/\..*/,replace='.etal').match('.etal').condense('').len('<=',17)
 +year
 +ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix(_)
 +postfix('-%(a)s') | 
 
-authEtal2.clean.lower.replace(find="-",replace="").replace(find=/\..*/,replace='.etal').match('.etal').replace(find=/\..*/,replace='').substring(1,12).postfix('.etal')
+authEtal2.clean.lower.replace(find="-",replace="").replace(find=/\..*/,replace='.etal').match('.etal').replace(find=/\..*/,replace='').condense('').substring(1,12).postfix('.etal')
 +year
 +ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix(_)
 +postfix('-%(a)s') | 
 
-authEtal2.clean.lower.replace(find="-",replace="").len('>',12).substring(1,12)
+authEtal2.clean.lower.replace(find="-",replace="").condense('').len('>',12).substring(1,12)
 +year
 +ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix(_)
 +postfix('-%(a)s') | 
@@ -19,17 +19,17 @@ authEtal2.clean.lower.replace(find="-",replace="").replace(find=/\..*/,replace='
 +postfix('-%(a)s') | 
 
 
-authors(1,etal='.etal',sep='.').clean.lower.replace(find="-",replace="").match('.etal').len('<=',17)
+authors(1,etal='.etal',sep='.').clean.lower.replace(find="-",replace="").match('.etal').condense('').len('<=',17)
 +year
 +shorttitle(2,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix('_')
 +postfix('-%(a)s') | 
 
-authors(1,etal='.etal',sep='.').clean.lower.replace(find="-",replace="").match('.etal').replace(find=/\..*/,replace='').substring(1,12).postfix('.etal')
+authors(1,etal='.etal',sep='.').clean.lower.replace(find="-",replace="").match('.etal').replace(find=/\..*/,replace='').condense('').substring(1,12).postfix('.etal')
 +year
 +shorttitle(2,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix('_')
 +postfix('-%(a)s') | 
 
-authors(1,etal='.etal',sep='.').clean.lower.replace(find="-",replace="").len('>',12).substring(1,12)
+authors(1,etal='.etal',sep='.').clean.lower.replace(find="-",replace="").condense('').len('>',12).substring(1,12)
 +year
 +shorttitle(2,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix('_')
 +postfix('-%(a)s') | 
