@@ -107,5 +107,5 @@ See [ZotFile_wildcards.json](ZotFile_wildcards.json) in this repository.
 See [User defined wildcards](http://zotfile.com/#user-defined-wildcards) in the ZotFile documentation for more details.
 
 ## License
-BBT_citation_key_format.txt and BTT_postscript.js are licensed under MIT License (following the precedent set by [Better BibTeX for Zotero](https://github.com/retorquere/zotero-better-bibtex/blob/master/LICENSE "zotero-better-bibtex/LICENSE").  
-ZotFile_wildcards.json is licensed under [GNU General Public License, version 3.0](https://github.com/jlegewie/zotfile#license "zotfile#license").  
+[BBT_citation_key_format.txt](BBT_citation_key_format.txt) and [BTT_postscript.js](BTT_postscript.js) are licensed under MIT License (following the precedent set by [Better BibTeX for Zotero](https://github.com/retorquere/zotero-better-bibtex/blob/master/LICENSE "zotero-better-bibtex/LICENSE").  
+[ZotFile_wildcards.json](ZotFile_wildcards.json) is licensed under [GNU General Public License, version 3.0](https://github.com/jlegewie/zotfile#license "zotfile#license").  
