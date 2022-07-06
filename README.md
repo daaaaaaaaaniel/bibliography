@@ -49,20 +49,22 @@ The generator tries up to 8 different formulas to produce a cite key.
 The final four attempts are the same as these first four, but they use the regular title instead of the short title.
 
 
-## ZotFile  
+## ZotFile Settings
+
+Delimiter between authors: ` & `  
+Maximum number of authors: 2  
+Add suffix when authors are omitted: ` et al.`  
 
 ### Renaming formula  
 
 **File Name**  
 
-
-
-
 ```
-{%a -}{ %C}{ %h| %W} (%b)
+{%a{ %y} -}{ %C}{ %h| %W} @%b
 ```
 
 - `%a` – Author  
+- `%y` – Year  
 - `%C`\* – Chapter (in "Extras")  
 - `%h` – Short title  
 - `%W`\* – Title without semicolon  
@@ -82,7 +84,7 @@ The final four attempts are the same as these first four, but they use the regul
 
 *Example*  
 
-> Lee & LiPuma - 1 Global Flows and the Politics of Circulation [lee.etal2004_Glob].pdf
+> Lee & LiPuma 2004 - 1 Global Flows and the Politics of Circulation [lee.etal2004_Glob].pdf
 
 ### Custom Wildcards
 
@@ -97,3 +99,7 @@ The final four attempts are the same as these first four, but they use the regul
 - `%J` behaves similarly to stock %j, but it replaces colons with dashes.
 
 See [User defined wildcards](http://zotfile.com/#user-defined-wildcards) in the ZotFile documentation for more details.
+
+## License
+BBT_citation_key_format.txt and BTT_postscript.js are licensed under MIT License (following the precedent set by [Better BibTeX for Zotero](https://github.com/retorquere/zotero-better-bibtex/blob/master/LICENSE "zotero-better-bibtex/LICENSE").  
+ZotFile_wildcards.json is licensed under [GNU General Public License, version 3.0](https://github.com/jlegewie/zotfile#license "zotfile#license").  
