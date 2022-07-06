@@ -1,6 +1,10 @@
-# My Bibliography Scripts  
+# My Bibliography
 
+This repository contains software resources that help me manage my personal research library and generate bibliographies in my digital writing. I use tools like [Zotero](https://www.zotero.org "Zotero"), [Better BibTeX for Zotero](https://retorque.re/zotero-better-bibtex/ "Better BibTeX for Zotero"), [Zotfile](https://zotfile.com "Zotfile"), [BibDesk](https://bibdesk.sourceforge.io "BibDesk"), and [Pandoc](https://pandoc.org "Pandoc"). 
+
+# Scripts
 ## Better BibTeX for Zotero citation key formula  
+- [BBT_citation_key_format.txt](BBT_citation_key_format.txt)  
 
 ### Example  
 
@@ -87,6 +91,8 @@ Add suffix when authors are omitted: ` et al.`
 > Lee & LiPuma 2004 - 1 Global Flows and the Politics of Circulation [lee.etal2004_Glob].pdf
 
 ### Custom Wildcards
+
+See [ZotFile_wildcards.json](ZotFile_wildcards.json) in this repository.
 
 - `%B` should be used for creating parent **folders** containing texts in an anthology or essay collection. It outputs text like *bookTitle (year)*.
     - if there's an editor, it should include the editor. If there's no editor, assume it's a monograph and format like *Author year - bookTitle*. 
