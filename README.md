@@ -64,7 +64,7 @@ Add suffix when authors are omitted: ` et al.`
 **File Name**  
 
 ```
-{%a{ %y} -}{ %C.}{ %h| %W} @%b
+{%a{ %y} -}{ %h| %W}{ ({%C - }%K)} @%b
 ```
 
 - `%a` – Author  
@@ -73,6 +73,7 @@ Add suffix when authors are omitted: ` et al.`
 - `%h` – Short title  
 - `%W`\* – Title without semicolon  
 - `%b` – Cite key  
+- `%K`\* – Publication title (truncate after semicolon)  
 
 [//]: # (`%W` may be redundant of `%t` = `titleFormated`)  
 
@@ -88,7 +89,7 @@ Add suffix when authors are omitted: ` et al.`
 
 *Example*  
 
-> Lee & LiPuma 2004 - 1 Global Flows and the Politics of Circulation [lee.etal2004_Glob].pdf
+> Lee & LiPuma 2004 - Global Flows and the Politics of Circulation (1 - Financial Derivatives and the Globalization of Risk) @lee.etal2004_Glob.pdf
 
 ### Custom Wildcards
 
