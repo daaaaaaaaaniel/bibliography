@@ -78,7 +78,9 @@ Add suffix when authors are omitted: ` et al.`
 [//]: # (`%W` may be redundant of `%t` = `titleFormated`)  
 
 **Subfolder Path**  
-`/ZotFile/%T{/%J}{/vol. %v}{/no. %e}/`
+```
+/ZotFile/%T{/%J}{/vol. %v}{/no. %e}/
+```
 
 - `%T` – Item type  
 - `%J`\* – Publication title  
@@ -104,6 +106,8 @@ See [ZotFile_wildcards.json](ZotFile_wildcards.json) in this repository.
 - `%W` is for formatting the title field to mimic the short title (?). Use it as a fallback for items without a short title.
 - `%C` is for `chapter-number` in the "Extras" field.
 - `%J` behaves similarly to stock %j, but it replaces colons with dashes.
+- `%K` is like `%J`, but it removes everything after the semicolon. And it only applies to book sections.
+
 
 See [User defined wildcards](http://zotfile.com/#user-defined-wildcards) in the ZotFile documentation for more details.
 
