@@ -64,7 +64,7 @@ Add suffix when authors are omitted: ` et al.`
 **File Name**  
 
 ```
-{%a{ %y} -}{ %C}{ %h| %W} @%b
+{%a{ %y} -}{ %C.}{ %h| %W} @%b
 ```
 
 - `%a` – Author  
