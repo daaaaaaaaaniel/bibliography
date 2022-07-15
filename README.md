@@ -105,7 +105,7 @@ See [ZotFile_wildcards.json](ZotFile_wildcards.json) in this repository.
 - `%P` should be used for indicating the page numbers of book sections. Use it as an {option} wild-card in **filenames**. It makes alphabetical sorting more useful.
 - `%W` is for formatting the title field to mimic the short title (?). Use it as a fallback for items without a short title.
 - `%C` is for `chapter-number` in the "Extras" field.
-- `%J` behaves similarly to stock %j, but it replaces colons with dashes.
+- `%J` behaves similarly to stock `%j`, but it replaces colons with dashes.
 - `%K` is like `%J`, but it removes everything after the semicolon. And it only applies to book sections.
 
 
