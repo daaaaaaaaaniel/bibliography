@@ -1,4 +1,4 @@
-{"E":{"field":"editor"},"B":"bookTitle","P":{"default":"bookTitle","bookSection":"pages"},"J":{"field":"publicationTitle","operations":[{"function":"replace","regex":": ","replacement":"- "}]},"C":{"field":"extra","operations":[{"function":"replace","regex":"[\\s\\S]*chapter-number:[\\s\\S]?([a-zA-Z0-9'.\\-]+)[\\s\\S]*|[\\s\\S].*[\\s\\S]","replacement":"$1"}]},"W":{"field":"title","operations":{"function":"replace","regex":":","replacement":"-","flags":"g"}},"V":{"default":"issue","bookSection":{"field":"date","regex":"\\d{4}","replacement":"$1","group":1}}}
+{"E":{"field":"editor"},"B":"bookTitle","P":{"default":"bookTitle","bookSection":"pages"},"J":{"field":"publicationTitle","operations":[{"function":"replace","regex":": ","replacement":"- "}]},"K":{"default":"bookTitle","bookSection":{"field":"publicationTitle","operations":[{"function":"replace","regex":" ?:.*","replacement":""}]}},"C":{"field":"extra","operations":[{"function":"replace","regex":"[\\s\\S]*chapter-number:[\\s\\S]?([a-zA-Z0-9'.\\-]+)[\\s\\S]*|[\\s\\S].*[\\s\\S]","replacement":"$1"}]},"W":{"field":"title","operations":{"function":"replace","regex":":","replacement":"-","flags":"g"}},"V":{"default":"issue","bookSection":{"field":"date","regex":"\\d{4}","replacement":"$1","group":1}}}
 {
     "E": {
         "field": "editor"
@@ -17,6 +17,19 @@
                 "replacement": "- "
             }
         ]
+      },
+    "K": {
+        "default": "bookTitle",
+        "bookSection": {
+            "field": "publicationTitle",
+            "operations": [
+                {
+                 "function": "replace",
+                  "regex": " ?:.*",
+                  "replacement": ""
+                }
+            ]
+        }
       },
     "C": {
       "field": "extra",

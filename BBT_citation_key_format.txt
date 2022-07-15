@@ -1,21 +1,21 @@
 authEtal2.clean.lower.replace(find="-",replace="").replace(find=/\..*/,replace='.etal').match('.etal').condense('').len('<=',17)
 +year
-+ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix(_)
++ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").replace(find=".",replace="").condense('').substring(1,4).prefix(_)
 +postfix('-%(a)s') | 
 
 authEtal2.clean.lower.replace(find="-",replace="").replace(find=/\..*/,replace='.etal').match('.etal').replace(find=/\..*/,replace='').condense('').substring(1,12).postfix('.etal')
 +year
-+ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix(_)
++ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").replace(find=".",replace="").condense('').substring(1,4).prefix(_)
 +postfix('-%(a)s') | 
 
 authEtal2.clean.lower.replace(find="-",replace="").condense('').len('>',12).substring(1,12)
 +year
-+ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix(_)
++ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").replace(find=".",replace="").condense('').substring(1,4).prefix(_)
 +postfix('-%(a)s') | 
 
 authEtal2.clean.lower.replace(find="-",replace="").replace(find=/\..*/,replace='.etal')
 +year
-+ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").condense('').substring(1,4).prefix(_)
++ShortTitle.skipwords.capitalize.len('>', 1).select(1,2).clean.replace(find="-",replace="").replace(find=".",replace="").condense('').substring(1,4).prefix(_)
 +postfix('-%(a)s') | 
 
 
