@@ -59,12 +59,19 @@ Delimiter between authors: ` & `
 Maximum number of authors: 2  
 Add suffix when authors are omitted: ` et al.`  
 
+**Advanced Settings**  
+- [x] Remove special charactes (diacritics) from filename
+
+[//]: # (This setting applies to file names only, not folder names)
+
+
+
 ### Renaming formula  
 
 **File Name**  
 
 ```
-{%a{ %y} -}{ %h| %W}{ ({%C - }%K)} @%b
+{%a{ %y} -}{ %C.}{ %h| %W}{ (in '%K')} @%b
 ```
 
 - `%a` – Author  
@@ -72,16 +79,18 @@ Add suffix when authors are omitted: ` et al.`
 - `%C`\* – Chapter (in "Extras")  
 - `%h` – Short title  
 - `%W`\* – Title without semicolon  
-- `%b` – Cite key  
-- `%K`\* – Publication title (truncate after semicolon)  
+- `%K`\* – Publication title (truncate after semicolon)
+- `%b` – Cite key    
 
 [//]: # (`%W` may be redundant of `%t` = `titleFormated`)  
 
 **Subfolder Path**  
-`/ZotFile/%T{/%J}{/vol. %v}{/no. %e}/`
+```
+/ZotFile/%T{/%K}{/vol. %v}{/no. %e}/
+```
 
 - `%T` – Item type  
-- `%J`\* – Publication title  
+- ~~`%J`\* – Publication title~~  
 - `%v` – Volume
 - `%e` – Issue
 
@@ -103,7 +112,9 @@ See [ZotFile_wildcards.json](ZotFile_wildcards.json) in this repository.
 - `%P` should be used for indicating the page numbers of book sections. Use it as an {option} wild-card in **filenames**. It makes alphabetical sorting more useful.
 - `%W` is for formatting the title field to mimic the short title (?). Use it as a fallback for items without a short title.
 - `%C` is for `chapter-number` in the "Extras" field.
-- `%J` behaves similarly to stock %j, but it replaces colons with dashes.
+- `%J` behaves similarly to stock `%j`, but it replaces colons with dashes.
+- `%K` is like `%J`, but it removes everything after the semicolon. And it only applies to book sections.
+
 
 See [User defined wildcards](http://zotfile.com/#user-defined-wildcards) in the ZotFile documentation for more details.
 
