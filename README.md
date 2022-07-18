@@ -59,12 +59,19 @@ Delimiter between authors: ` & `
 Maximum number of authors: 2  
 Add suffix when authors are omitted: ` et al.`  
 
+**Advanced Settings**  
+- [x] Remove special charactes (diacritics) from filename
+
+[//]: # (This setting applies to file names only, not folder names)
+
+
+
 ### Renaming formula  
 
 **File Name**  
 
 ```
-{%a{ %y} -}{ %h| %W}{ ({%C - }%K)} @%b
+{%a{ %y} -}{ %C.}{ %h| %W}{ (in '%K')} @%b
 ```
 
 - `%a` – Author  
@@ -72,18 +79,18 @@ Add suffix when authors are omitted: ` et al.`
 - `%C`\* – Chapter (in "Extras")  
 - `%h` – Short title  
 - `%W`\* – Title without semicolon  
-- `%b` – Cite key  
-- `%K`\* – Publication title (truncate after semicolon)  
+- `%K`\* – Publication title (truncate after semicolon)
+- `%b` – Cite key    
 
 [//]: # (`%W` may be redundant of `%t` = `titleFormated`)  
 
 **Subfolder Path**  
 ```
-/ZotFile/%T{/%J}{/vol. %v}{/no. %e}/
+/ZotFile/%T{/%K}{/vol. %v}{/no. %e}/
 ```
 
 - `%T` – Item type  
-- `%J`\* – Publication title  
+- ~~`%J`\* – Publication title~~  
 - `%v` – Volume
 - `%e` – Issue
 
