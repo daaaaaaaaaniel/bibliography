@@ -79,18 +79,18 @@ Add suffix when authors are omitted: ` et al.`
 - `%C`\* – Chapter (in "Extras")  
 - `%h` – Short title  
 - `%W`\* – Title without semicolon  
-- `%K`\* – Publication title (truncate after semicolon)
+- `%k`\* – Publication title (truncate after semicolon) *(Book Section only)*
 - `%b` – Cite key    
 
 [//]: # (`%W` may be redundant of `%t` = `titleFormated`)  
 
 **Subfolder Path**  
 ```
-/ZotFile/%T{/%K}{/vol. %v}{/no. %e}/
+/ZotFile/%m{/%K}{/vol. %v}{/no. %e}/
 ```
 
-- `%T` – Item type  
-- ~~`%J`\* – Publication title~~  
+- `%m`\* – Item type (uses "Book" for book section)  
+- `%K`\* – Publication title (truncate after semicolon)
 - `%v` – Volume
 - `%e` – Issue
 
