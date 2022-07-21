@@ -71,49 +71,54 @@ Add suffix when authors are omitted: ` et al.`
 **File Name**  
 
 ```
-{%a{ %y} -}{ %C.}{ %h| %W}{ (in '%K')} @%b
+{%a{ %y} -}{ %C.}{ %h| %W}{ (in '%k')} @%b
 ```
 
 - `%a` – Author  
 - `%y` – Year  
-- `%C`\* – Chapter (in "Extras")  
+- `%C`^[†](#custom-wildcards "Custom Wildcard")^ – Chapter (in "Extras")  
 - `%h` – Short title  
-- `%W`\* – Title without semicolon  
-- `%K`\* – Publication title (truncate after semicolon)
+- `%W`^[†](#custom-wildcards "Custom Wildcard")^ – Title without semicolon  
+- `%k`^[†](#custom-wildcards "Custom Wildcard")^ – Publication title (truncate after semicolon) *(Book Section only)*
 - `%b` – Cite key    
 
 [//]: # (`%W` may be redundant of `%t` = `titleFormated`)  
 
-**Subfolder Path**  
-```
-/ZotFile/%T{/%K}{/vol. %v}{/no. %e}/
-```
-
-- `%T` – Item type  
-- ~~`%J`\* – Publication title~~  
-- `%v` – Volume
-- `%e` – Issue
-
-\* Custom  
+[†](#custom-wildcards): Custom wildcard  
 
 *Example*  
 
-> Lee & LiPuma 2004 - Global Flows and the Politics of Circulation (1 - Financial Derivatives and the Globalization of Risk) @lee.etal2004_Glob.pdf
+> Lee & LiPuma 2004 - 1. Global Flows and the Politics of Circulation (in 'Financial Derivatives and the Globalization of Risk') @lee.etal2004_Glob
+
+
+**Subfolder Path**  
+```
+/ZotFile/%m{/%K}{/vol. %v}{/no. %e}/
+```
+
+- `%m`^[†](#custom-wildcards "Custom Wildcard")^ – Item type (uses "Book" for book section)  
+- `%K`^[†](#custom-wildcards "Custom Wildcard")^ – Publication title (truncate after semicolon)
+- `%v` – Volume
+- `%e` – Issue
+
+
 
 ### Custom Wildcards
 
 See [ZotFile_wildcards.json](ZotFile_wildcards.json) in this repository.
 
-- `%B` should be used for creating parent **folders** containing texts in an anthology or essay collection. It outputs text like *bookTitle (year)*.
-    - if there's an editor, it should include the editor. If there's no editor, assume it's a monograph and format like *Author year - bookTitle*. 
+- `%B` should be used for creating parent **folders** containing texts in an anthology or essay collection. It outputs text like *bookTitle (year)*.  
+    - if there's an editor, it should include the editor. If there's no editor, assume it's a monograph and format like *Author year - bookTitle*.  
         -  for monographs, use :`{%a %y - %B}` 
         - for anthologies/collections, use : `{%d (eds.) %y - %B}`
         - `/ZotFile{/%d (eds.) %y - %B}` or just `/ZotFile{/%B (%y)}`
-- `%P` should be used for indicating the page numbers of book sections. Use it as an {option} wild-card in **filenames**. It makes alphabetical sorting more useful.
-- `%W` is for formatting the title field to mimic the short title (?). Use it as a fallback for items without a short title.
-- `%C` is for `chapter-number` in the "Extras" field.
-- `%J` behaves similarly to stock `%j`, but it replaces colons with dashes.
-- `%K` is like `%J`, but it removes everything after the semicolon. And it only applies to book sections.
+- `%P` should be used for indicating the page numbers of book sections. Use it as an {option} wild-card in **filenames**. It makes alphabetical sorting more useful.  
+- `%J` behaves similarly to stock `%j`, but it replaces colons with dashes.  
+- `%K` is like `%J` or stock `%j`, but it removes everything after the semicolon. It returns the title of the book or journal that contains the item.  
+- `%k` is like `%K`, but it returns nothing for all types *except* Book Section. It returns the title of the book that contains the item and removes everything after the semicolon.  
+- `%C` is for `chapter-number` in the "Extras" field.  
+- `%W` is for formatting the title field to mimic the short title (?). Use it as a fallback for items without a short title.  
+- `%m` is exactly like `%T`, except it returns `Book` instead of `Book Section`.  
 
 
 See [User defined wildcards](http://zotfile.com/#user-defined-wildcards) in the ZotFile documentation for more details.
