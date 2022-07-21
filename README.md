@@ -76,10 +76,10 @@ Add suffix when authors are omitted: ` et al.`
 
 - `%a` – Author  
 - `%y` – Year  
-- `%C`^[†](#custom-wildcards "Custom Wildcard")^ – Chapter (in "Extras")  
+- `%C`[†](#custom-wildcards "Custom Wildcard") – Chapter (in "Extras")  
 - `%h` – Short title  
-- `%W`^[†](#custom-wildcards "Custom Wildcard")^ – Title without semicolon  
-- `%k`^[†](#custom-wildcards "Custom Wildcard")^ – Publication title (truncate after semicolon) *(Book Section only)*
+- `%W`[†](#custom-wildcards "Custom Wildcard") – Title without semicolon  
+- `%k`[†](#custom-wildcards "Custom Wildcard") – Publication title (truncate after semicolon) *(Book Section only)*
 - `%b` – Cite key    
 
 [//]: # (`%W` may be redundant of `%t` = `titleFormated`)  
@@ -96,8 +96,8 @@ Add suffix when authors are omitted: ` et al.`
 /ZotFile/%m{/%K}{/vol. %v}{/no. %e}/
 ```
 
-- `%m`^[†](#custom-wildcards "Custom Wildcard")^ – Item type (uses "Book" for book section)  
-- `%K`^[†](#custom-wildcards "Custom Wildcard")^ – Publication title (truncate after semicolon)
+- `%m`[†](#custom-wildcards "Custom Wildcard") – Item type (uses "Book" for book section)  
+- `%K`[†](#custom-wildcards "Custom Wildcard") – Publication title (truncate after semicolon)
 - `%v` – Volume
 - `%e` – Issue
 
