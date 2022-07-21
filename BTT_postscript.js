@@ -16,6 +16,7 @@ if (Translator.BetterTeX) {
   }
   // No need to test for the value, BBT does nothing if the value is empty
   entry.add({ name: 'chapter', value: extra.kv.session});
+  entry.add({ name: 'journalAbbreviation', value: extra.kv.journalAbbreviation});
   return { cache }
 }
 
