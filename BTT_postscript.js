@@ -17,22 +17,39 @@ if (Translator.BetterTeX) {
   // No need to test for the value, BBT does nothing if the value is empty
   entry.add({ name: 'chapter', value: extra.kv.session});
   entry.add({ name: 'journalAbbreviation', value: extra.kv.journalAbbreviation});
-  // BROKEN - Split long Book Title into Book Title, Book Subtitle
-  // if (reference.has.publicationTitle) {
-  if (reference.has.booktitle) {
-    const booktitles = reference.booktitle.value.match(/(.+?)([?:;])(.*)/)
-    if (booktitles) {
-      let booktitle = booktitles[1] + (booktitles[2] === '?' ? '?' : '')
-      reference.add({ name: 'booktitle', value: booktitle })
-      reference.add({ name: 'booksubtitle', value: booktitles[3].trim() })
-    }
-  }
+  // // BROKEN - Split long Book Title into Book Title, Book Subtitle
+  // if (reference.has.booktitle) {
+  //   const booktitles = reference.booktitle.value.match(/(.+?)([?:;])(.*)/)
+  //   if (booktitles) {
+  //     let booktitle = booktitles[1] + (booktitles[2] === '?' ? '?' : '')
+  //     reference.add({ name: 'booktitle', value: booktitle })
+  //     reference.add({ name: 'booksubtitle', value: booktitles[3].trim() })
+  //   }
+  // }
+  //
   // Split long Title into Title, Subtitle
   // https://github.com/retorquere/zotero-better-bibtex/issues/1759#issuecomment-798949707
   if (reference.has.title) {
-    const titles = reference.has.title.value.match(/(.+?)([?:;])(.*)/)
+    const titles = reference.has.title.value.match(/(.+?)([?:;]"?)(.*)/)
     if (titles) {
-      let title = titles[1] + (titles[2] === '?' ? '?' : '')
+      // let title = titles[1] + (titles[2] === '?' ? '?' : '')
+      if (titles[2] === '?' ){
+        titles[2] = '?'
+      } else if (titles[2] === '?"' ){
+        titles[2] === '?"'
+      } else {
+        titles[2] = ''
+      }
+      let title = titles[1] + titles[2]
+      // Authors who use parentesis in their titles break all sorts of conventions. Don't even bother seriously parsing.
+      if (title.match(/\((?!.*\))/) ) {
+        title = item.title
+        titles[3] = ''
+      }
+      if (titles[3].match(/\((?!.*\))/) ) {
+        // try checking for a unpaired closing parentesis in the subtitle too
+        // but i don't know how ...  
+      }
       reference.add({ name: 'title', value: title })
       reference.add({ name: 'subtitle', value: titles[3].trim() })
     }
