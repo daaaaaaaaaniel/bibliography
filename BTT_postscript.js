@@ -20,8 +20,8 @@ if (Translator.BetterTeX) {
 
   // https://github.com/retorquere/zotero-better-bibtex/issues/2220#issuecomment-1192425830
   function split(title) {
-    const m = (title || '').match(/(.+?)([?]"|[?:;])(.*)/)
-    return m ? { title: m[1] + m[2].replace(RegExp("\:"), "").trim(), sub: m[3].trim() } : null
+    const m = (title || '').match(/(.+?)([?]"|:" |[?:;])(.*)/)
+    return m ? { title: m[1] + m[2].replace(/[:]/, "").trim(), sub: m[3].trim() } : null
   }
   let title
 
