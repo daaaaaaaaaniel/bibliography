@@ -71,12 +71,12 @@ Add suffix when authors are omitted: ` et al.`
 **File Name**  
 
 ```
-{%a{ %y} -}{ %C}{ %h| %W}{ (in '%k')} @%b
+{%a{ %y} -}{ %C.}{ %h| %W}{ (in '%k')} @%b
 ```
 
 - `%a` – Author  
 - `%y` – Year  
-- `%C`[†](#custom-wildcards "Custom Wildcard") – Chapter (in "Extras")  
+- `%C`[†](#custom-wildcards "Custom Wildcard") – Chapter (in "Extras" as `chapter-number`)  
 - `%h` – Short title  
 - `%W`[†](#custom-wildcards "Custom Wildcard") – Title without semicolon  
 - `%k`[†](#custom-wildcards "Custom Wildcard") – Publication title (truncate after semicolon) *(Book Section only)*
@@ -100,7 +100,7 @@ Add suffix when authors are omitted: ` et al.`
 - `%K`[†](#custom-wildcards "Custom Wildcard") – Publication title (truncate after semicolon)
 - `%v` – Volume
 - `%e` – Issue
-- `%C`[†](#custom-wildcards "Custom Wildcard") – Chapter (in "Extras")  
+- `%C`[†](#custom-wildcards "Custom Wildcard") – Chapter (in "Extras" as `chapter-number`)  
 - `%b` – Cite key  
 - **_TODO_**: create variable to replace `%b` -- for books it should use the title, and for all other types use the citekey. In effect, edited books and book chapters will be placed in the same directory. _I should also change the file renaming rule to not include the citekey for all types except books._   
 
