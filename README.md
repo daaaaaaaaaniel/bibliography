@@ -95,7 +95,7 @@ Add suffix when authors are omitted: ` et al.`
 
 **Subfolder Path**  
 ```
-/ZotFile/%m{/%K}{/vol. %v}{/no. %e}/{%C - }{p. %f - }{%z|%Z|%b}
+/ZotFile/%m{/%K}{/vol. %v}{/no. %e}/{p. %f - }{%C. }{%z|%Z|%b}
 ```
 
 - `%m`[†](#custom-wildcards "Custom Wildcard") – Item type (uses "Book" for book section)  

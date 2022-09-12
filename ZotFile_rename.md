@@ -7,5 +7,5 @@
 ## Location of Files
 **Subfolder path**
 ```
-/ZotFile/%m{/%K}{/vol. %v}{/no. %e}/{%C - }{p. %f - }{%z|%Z|%b}
+/ZotFile/%m{/%K}{/vol. %v}{/no. %e}/{p. %f - }{%C. }{%z|%Z|%b}
 ```
