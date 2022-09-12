@@ -94,7 +94,7 @@ Add suffix when authors are omitted: ` et al.`
 
 **Subfolder Path**  
 ```
-/ZotFile/%m{/%K}{/vol. %v}{/no. %e}/{%C. }%b
+/ZotFile/%m{/%K}{/vol. %v}{/no. %e}/{%C. }{%z|%Z|%b}
 ```
 
 - `%m`[†](#custom-wildcards "Custom Wildcard") – Item type (uses "Book" for book section)  
@@ -123,7 +123,8 @@ See [ZotFile_wildcards.json](ZotFile_wildcards.json) in this repository.
 - `%k` is like `%K`, but it returns nothing for all types *except* Book Section. It returns the title of the book that contains the item and removes everything after the semicolon.  
 - `%C` is for `chapter-number` in the "Extras" field.  
 - `%W` is for formatting the title field to mimic the short title (?). Use it as a fallback for items without a short title.  
-- `%m` is exactly like `%T`, except it returns `Book` instead of `Book Section`.  
+- `%m` is exactly like `%T`, except it returns `Book` instead of `Book Section`. 
+- `%Z` and `%z` use the official Zotero variable `citationKey`. `%O` and `%o` use the ZotFile variable `citekey`. I think Z should be more robust than O. 
 
 
 See [User defined wildcards](http://zotfile.com/#user-defined-wildcards) in the ZotFile documentation for more details.
