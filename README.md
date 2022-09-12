@@ -71,12 +71,11 @@ Add suffix when authors are omitted: ` et al.`
 **File Name**  
 
 ```
-{%a{ %y} -}{ %C.}{ %h| %W}{ (in '%k')}{ @%O}
+{%a{ %y} -}{ %h| %W}{ (in '%k')}{ @%O}
 ```
 
 - `%a` – Author  
 - `%y` – Year  
-- `%C`[†](#custom-wildcards "Custom Wildcard") – Chapter (in "Extras" as `chapter-number`) 
 - `{ %h| %W}`  – Short title with fallback to safe title
 	- `%h` – Short title  
 	- `%W`[†](#custom-wildcards "Custom Wildcard") – Title without semicolon  
@@ -89,7 +88,9 @@ Add suffix when authors are omitted: ` et al.`
 
 *Example*  
 
-> Lee & LiPuma 2004 - 1. Global Flows and the Politics of Circulation (in 'Financial Derivatives and the Globalization of Risk') @lee.etal2004_Glob
+> Lee & LiPuma 2004 - Financial Derivatives and the Globalization of Risk @lee.etal2004_Fina  
+
+> Lee & LiPuma 2004 - 1. Global Flows and the Politics of Circulation (in 'Financial Derivatives and the Globalization of Risk')  
 
 
 **Subfolder Path**  
