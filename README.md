@@ -71,7 +71,7 @@ Add suffix when authors are omitted: ` et al.`
 **File Name**  
 
 ```
-{%a{ %y} -}{ %C.}{ %h| %W}{ (in '%k')} @%b
+{%a{ %y} -}{ %C.}{ %h| %W}{ (in '%k')}{ @%O}
 ```
 
 - `%a` – Author  
@@ -81,7 +81,7 @@ Add suffix when authors are omitted: ` et al.`
 	- `%h` – Short title  
 	- `%W`[†](#custom-wildcards "Custom Wildcard") – Title without semicolon  
 - `%k`[†](#custom-wildcards "Custom Wildcard") – Publication title (truncate after semicolon) *(Book Section only)*
-- `%b` – Cite key  
+- `%O` – Cite key for books. Empty for all other types.  
 
 [//]: # (`%W` may be redundant of `%t` = `titleFormated`)  
 
