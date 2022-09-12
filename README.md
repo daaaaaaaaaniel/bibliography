@@ -71,7 +71,7 @@ Add suffix when authors are omitted: ` et al.`
 **File Name**  
 
 ```
-{%a{ %y} -}{ %h| %W}{ (in '%k')}{ @%O}
+{%a{ %y} -}{ %h| %W}{ @%O}
 ```
 
 - `%a` – Author  
@@ -90,12 +90,12 @@ Add suffix when authors are omitted: ` et al.`
 
 > Lee & LiPuma 2004 - Financial Derivatives and the Globalization of Risk @lee.etal2004_Fina  
 
-> Lee & LiPuma 2004 - 1. Global Flows and the Politics of Circulation (in 'Financial Derivatives and the Globalization of Risk')  
+> Lee & LiPuma 2004 - Financial Derivatives and the Globalization of Risk - Global Flows and the Politics of Circulation  
 
 
 **Subfolder Path**  
 ```
-/ZotFile/%m{/%K}{/vol. %v}{/no. %e}/{%C. }{%z|%Z|%b}
+/ZotFile/%m{/%K}{/vol. %v}{/no. %e}/{%C - }{p. %f - }{%z|%Z|%b}
 ```
 
 - `%m`[†](#custom-wildcards "Custom Wildcard") – Item type (uses "Book" for book section)  
