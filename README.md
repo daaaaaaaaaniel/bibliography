@@ -106,9 +106,6 @@ Add suffix when authors are omitted: ` et al.`
 	- `%z` – Book: short title     
 	- `%Z` – Book: title (truncate after semicolon)  
 	- `%b` – Cite key  
-- **_TODO_**: create variable to replace `%b` -- for books it should use the title, and for all other types use the citekey. In effect, edited books and book chapters will be placed in the same directory. _I should also change the file renaming rule to not include the citekey for all types except books._   
-
-
 
 
 ### Custom Wildcards
@@ -127,7 +124,9 @@ See [ZotFile_wildcards.json](ZotFile_wildcards.json) in this repository.
 - `%C` is for `chapter-number` in the "Extras" field.  
 - `%W` is for formatting the title field to mimic the short title (?). Use it as a fallback for items without a short title.  
 - `%m` is exactly like `%T`, except it returns `Book` instead of `Book Section`. 
-- `%Z` and `%z` use the official Zotero variable `citationKey`. `%O` and `%o` use the ZotFile variable `citekey`. I think Z should be more robust than O. 
+- `%Z` and `%z` use the official Zotero variable `citationKey` for all item types except books. For books, they use the title and short title fields. Use this the path `{/%K}{/%z|%Z|%b}` to place book chapters and books in the same directory, named by the short book title. _(dev note: If it fails for some reason, revert to the ZotFile variable `citekey`.)_
+- `%O` is empty for all types except books. For books, it uses the citation key. Attachments for all item types except books should be contained in a directory named by the citation key. Book attachments are in a directory named by the title, so add the citekey to the file directly.
+
 
 
 See [User defined wildcards](http://zotfile.com/#user-defined-wildcards) in the ZotFile documentation for more details.
