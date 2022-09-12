@@ -76,9 +76,10 @@ Add suffix when authors are omitted: ` et al.`
 
 - `%a` – Author  
 - `%y` – Year  
-- `%C`[†](#custom-wildcards "Custom Wildcard") – Chapter (in "Extras" as `chapter-number`)  
-- `%h` – Short title  
-- `%W`[†](#custom-wildcards "Custom Wildcard") – Title without semicolon  
+- `%C`[†](#custom-wildcards "Custom Wildcard") – Chapter (in "Extras" as `chapter-number`) 
+- `{ %h| %W}`  – Short title with fallback to safe title
+	- `%h` – Short title  
+	- `%W`[†](#custom-wildcards "Custom Wildcard") – Title without semicolon  
 - `%k`[†](#custom-wildcards "Custom Wildcard") – Publication title (truncate after semicolon) *(Book Section only)*
 - `%b` – Cite key    
 
