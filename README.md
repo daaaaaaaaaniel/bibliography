@@ -93,13 +93,17 @@ Add suffix when authors are omitted: ` et al.`
 
 **Subfolder Path**  
 ```
-/ZotFile/%m{/%K}{/vol. %v}{/no. %e}/
+/ZotFile/%m{/%K}{/vol. %v}{/no. %e}/{%C. }%b
 ```
 
 - `%m`[†](#custom-wildcards "Custom Wildcard") – Item type (uses "Book" for book section)  
 - `%K`[†](#custom-wildcards "Custom Wildcard") – Publication title (truncate after semicolon)
 - `%v` – Volume
 - `%e` – Issue
+- `%C`[†](#custom-wildcards "Custom Wildcard") – Chapter (in "Extras")  
+- `%b` – Cite key  
+- **_TODO_**: create variable to replace `%b` -- for books it should use the title, and for all other types use the citekey. In effect, edited books and book chapters will be placed in the same directory. _I should also change the file renaming rule to not include the citekey for all types except books._   
+
 
 
 
