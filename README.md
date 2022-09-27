@@ -71,17 +71,16 @@ Add suffix when authors are omitted: ` et al.`
 **File Name**  
 
 ```
-{%a{ %y} -}{ %C.}{ %h| %W}{ (in '%k')} @%b
+{%a{ %y} -}{ %h| %W}{ @%O}
 ```
 
 - `%a` – Author  
 - `%y` – Year  
-- `%C`[†](#custom-wildcards "Custom Wildcard") – Chapter (in "Extras" as `chapter-number`) 
 - `{ %h| %W}`  – Short title with fallback to safe title
 	- `%h` – Short title  
 	- `%W`[†](#custom-wildcards "Custom Wildcard") – Title without semicolon  
 - `%k`[†](#custom-wildcards "Custom Wildcard") – Publication title (truncate after semicolon) *(Book Section only)*
-- `%b` – Cite key    
+- `%O` – Cite key for books. Empty for all other types.  
 
 [//]: # (`%W` may be redundant of `%t` = `titleFormated`)  
 
@@ -89,12 +88,14 @@ Add suffix when authors are omitted: ` et al.`
 
 *Example*  
 
-> Lee & LiPuma 2004 - 1. Global Flows and the Politics of Circulation (in 'Financial Derivatives and the Globalization of Risk') @lee.etal2004_Glob
+> Lee & LiPuma 2004 - Financial Derivatives and the Globalization of Risk @lee.etal2004_Fina  
+
+> Lee & LiPuma 2004 - Financial Derivatives and the Globalization of Risk - Global Flows and the Politics of Circulation  
 
 
 **Subfolder Path**  
 ```
-/ZotFile/%m{/%K}{/vol. %v}{/no. %e}/{%C. }%b
+/ZotFile/%m{/%K}{/vol. %v}{/no. %e}/{p. %f - }{%C. }{%z|%Z|%b}
 ```
 
 - `%m`[†](#custom-wildcards "Custom Wildcard") – Item type (uses "Book" for book section)  
@@ -102,10 +103,10 @@ Add suffix when authors are omitted: ` et al.`
 - `%v` – Volume
 - `%e` – Issue
 - `%C`[†](#custom-wildcards "Custom Wildcard") – Chapter (in "Extras" as `chapter-number`)  
-- `%b` – Cite key  
-- **_TODO_**: create variable to replace `%b` -- for books it should use the title, and for all other types use the citekey. In effect, edited books and book chapters will be placed in the same directory. _I should also change the file renaming rule to not include the citekey for all types except books._   
-
-
+- `{%z|%Z|%b}` – Cite key, except books use title  
+	- `%z` – Book: short title     
+	- `%Z` – Book: title (truncate after semicolon)  
+	- `%b` – Cite key  
 
 
 ### Custom Wildcards
@@ -123,7 +124,10 @@ See [ZotFile_wildcards.json](ZotFile_wildcards.json) in this repository.
 - `%k` is like `%K`, but it returns nothing for all types *except* Book Section. It returns the title of the book that contains the item and removes everything after the semicolon.  
 - `%C` is for `chapter-number` in the "Extras" field.  
 - `%W` is for formatting the title field to mimic the short title (?). Use it as a fallback for items without a short title.  
-- `%m` is exactly like `%T`, except it returns `Book` instead of `Book Section`.  
+- `%m` is exactly like `%T`, except it returns `Book` instead of `Book Section`. 
+- `%Z` and `%z` use the official Zotero variable `citationKey` for all item types except books. For books, they use the title and short title fields. Use this the path `{/%K}{/%z|%Z|%b}` to place book chapters and books in the same directory, named by the short book title. _(dev note: If it fails for some reason, revert to the ZotFile variable `citekey`.)_
+- `%O` is empty for all types except books. For books, it uses the citation key. Attachments for all item types except books should be contained in a directory named by the citation key. Book attachments are in a directory named by the title, so add the citekey to the file directly.
+
 
 
 See [User defined wildcards](http://zotfile.com/#user-defined-wildcards) in the ZotFile documentation for more details.

@@ -1,4 +1,4 @@
-{"E":{"field":"editor"},"B":"bookTitle","P":{"default":"bookTitle","bookSection":"pages"},"J":{"field":"publicationTitle","operations":[{"function":"replace","regex":": ","replacement":"- "}]},"K":{"default":"publicationTitle","bookSection":{"field":"publicationTitle","operations":[{"function":"replace","regex":" ?:.*","replacement":""}]}},"k":{"default":"bookTitle","bookSection":{"field":"publicationTitle","operations":[{"function":"exec","regex":"^(.+?) ?:","group":"1"}]}},"C":{"field":"extra","operations":[{"function":"replace","regex":"[\\s\\S]*chapter-number:[\\s\\S]?([a-zA-Z0-9'.\\-]+)[\\s\\S]*|[\\s\\S].*[\\s\\S]","replacement":"$1"}]},"W":{"field":"title","operations":{"function":"replace","regex":":","replacement":"-","flags":"g"}},"V":{"default":"issue","bookSection":{"field":"date","regex":"\\d{4}","replacement":"$1","group":1}},"m":{"default":"itemType","bookSection":{"field":"itemType","operations":[{"function":"exec","regex":"(Book)","group":"1"}]}}}
+{"E":{"field":"editor"},"B":"bookTitle","P":{"default":"bookTitle","bookSection":"pages"},"J":{"field":"publicationTitle","operations":[{"function":"replace","regex":": ","replacement":"- "}]},"K":{"default":"publicationTitle","bookSection":{"field":"publicationTitle","operations":[{"function":"replace","regex":" ?:.*","replacement":""}]}},"k":{"default":"bookTitle","bookSection":{"field":"publicationTitle","operations":[{"function":"exec","regex":"^(.+?) ?:","group":"1"}]}},"C":{"field":"extra","operations":[{"function":"replace","regex":"[\\s\\S]*chapter-number:[\\s\\S]?([a-zA-Z0-9'.\\-]+)[\\s\\S]*|[\\s\\S].*[\\s\\S]","replacement":"$1"}]},"W":{"field":"title","operations":{"function":"replace","regex":":","replacement":"-","flags":"g"}},"V":{"default":"issue","bookSection":{"field":"date","regex":"\\d{4}","replacement":"$1","group":1}},"m":{"default":"itemType","bookSection":{"field":"itemType","operations":[{"function":"exec","regex":"(Book)","group":"1"}]}},"O":{"default":{"field":"publicationTitle","operations":[{"function":"replace","regex":".*","replacement":""}]},"book":"citationKey"},"Z":{"default":"citationKey","book":{"field":"title","operations":[{"function":"exec","regex":"^(.+?) ?:","group":"1"}]}},"z":{"default":"citationKey","book":"shortTitle"}}
 {
     "E": {
         "field": "editor"
@@ -84,5 +84,35 @@
                 }
             ]
         }
+    },
+    "O": {
+        "default": {
+            "field": "publicationTitle",
+            "operations": [
+                {
+                    "function": "replace",
+                    "regex": ".*",
+                    "replacement": ""
+                }
+            ]
+        },
+        "book": "citationKey"
+    },
+    "Z": {
+        "default": "citationKey",
+        "book": {
+            "field": "title",
+            "operations": [
+                {
+                 "function": "exec",
+                  "regex": "^(.+?) ?:",
+                  "group": "1"
+                }
+            ]
+        }
+    },
+    "z": {
+        "default": "citationKey",
+        "book": "shortTitle"
     }
 }
